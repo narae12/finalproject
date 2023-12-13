@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Bookmark Add{% endblock %}
+{% block content %}
+    <form action="{% url 'bookmark:update' bookmark.id %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <!-- {{form}} -->
+    <input type="submit" value="Update" class="btn btn-info btn-sm">
+    </form>
+{% endblock %}
